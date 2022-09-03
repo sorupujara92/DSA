@@ -4,7 +4,7 @@ public class threadSequence extends Thread{
 	String name;
 	static Integer count=1;
 	Integer difference;
-	 Object obj = new Object();
+	Object obj = new Object();
 	Integer count1=1;
 	threadSequence(String name,Integer difference){
 		this.name=name;
@@ -23,7 +23,7 @@ public class threadSequence extends Thread{
 	public void run(){
 		while(count<10) {
 			try{
-				synchronized (obj) {
+				//synchronized (obj) {
 					
 			
 					if(count%3==this.difference){
@@ -31,11 +31,11 @@ public class threadSequence extends Thread{
 						System.out.println(count1);
 						count++;
 				//		count++;
-						obj.notifyAll();
+						//obj.notifyAll();
 					}else{
-						obj.wait();
+						//obj.wait();
 					}
-				}
+		//		}
 			}catch(Exception e){
 				System.out.println(e);
 			}

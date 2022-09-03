@@ -2,6 +2,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.ThreadFactory;
 
  class RunnableThread implements Callable<Integer> {
@@ -22,11 +23,19 @@ import java.util.concurrent.ThreadFactory;
  
 }
 
+class RunnableThread1 implements Runnable{
 
+
+  @Override
+  public void run() {
+
+  }
+}
 public class ThreadTest {
 
  public static void main(String args[]){
  RunnableThread rt = new RunnableThread();
+ FutureTask ft = new FutureTask(new RunnableThread1(),"");
  ExecutorService et = Executors.newFixedThreadPool(2);
  try{
  Future<Integer> result = et.submit(rt);

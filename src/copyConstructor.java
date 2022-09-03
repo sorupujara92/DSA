@@ -30,8 +30,10 @@ String b;
 	public  static void main(String x[]){
 		copyConstructor c1 = new copyConstructor(1,"b");
 		copyConstructor c2 = null;
+		copyConstructor c3 = null;
 		try {
 			 c2 = (copyConstructor) c1.clone();
+			 c3 =c2;
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,6 +41,8 @@ String b;
 		c1.setB("ciil");
 		System.out.println(c1.getB());
 		System.out.println(c2.getB());
+		System.out.println(c3.getB());
+
 		System.out.println(c1==c2);
 	}
 }
